@@ -1,6 +1,9 @@
 #      created by HuuTien
+# Resolve paths independently of the directory where the tool was launched.
+set counter_root [file dirname [file normalize [info script]]]
+
 #===============================
-#=    creata multi-corners     =
+#=    Create timing corners   =
 #===============================
 
 create_library_set -name wcl_slow -timing [list [file join $counter_root lib slow_vdd1v0_basicCells.lib]]
@@ -27,19 +30,19 @@ create_delay_corner -name delay_corner_wcl_fast -early_timing_condition timing_c
 
 
 #===============================
-#=    creata multi-modes       =
+#=    Create constraint mode  =
 #===============================
 
-create_constraint_mode -name functional_wcl_slow -sdc_files [list [file join $counter_root constraints constraints_top.sdc]]
-
-create_constraint_mode -name functional_wcl_fast -sdc_files [list [file join $counter_root constraints constraints_top.sdc]]
+# Both PVT corners use the same functional constraints.
+create_constraint_mode -name functional -sdc_files [list [file join $counter_root constraints constraints_top.sdc]]
 
 #===============================
-#=    creata multi-views       =
+#=    Create analysis views   =
 #===============================
 
-create_analysis_view -name view_wcl_slow -constraint_mode functional_wcl_slow -delay_corner delay_corner_wcl_slow
-create_analysis_view -name view_wcl_fast -constraint_mode functional_wcl_fast -delay_corner delay_corner_wcl_fast
+create_analysis_view -name view_wcl_slow -constraint_mode functional -delay_corner delay_corner_wcl_slow
+create_analysis_view -name view_wcl_fast -constraint_mode functional -delay_corner delay_corner_wcl_fast
 
+# Check setup and hold at both available PVT corners.
 set_analysis_view -setup {view_wcl_slow view_wcl_fast} \
                   -hold  {view_wcl_slow view_wcl_fast}
