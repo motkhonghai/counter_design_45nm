@@ -1,0 +1,240 @@
+[09/08 14:37:45      0s] 
+[09/08 14:37:45      0s] Cadence Innovus(TM) Implementation System.
+[09/08 14:37:45      0s] Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+[09/08 14:37:45      0s] 
+[09/08 14:37:45      0s] Version:	v25.13-s088_1, built Thu Mar 26 12:37:48 PDT 2026
+[09/08 14:37:45      0s] Options:	-stylus 
+[09/08 14:37:45      0s] Date:		Tue Sep  8 14:37:45 2026
+[09/08 14:37:45      0s] Host:		eda (x86_64 w/Linux 5.14.0-719.el9.x86_64) (2cores*4cpus*Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz 8192KB)
+[09/08 14:37:45      0s] OS:		CentOS Stream 9
+[09/08 14:37:45      0s] 
+[09/08 14:37:45      0s] License:
+[09/08 14:37:45      0s] 		[14:37:45.086465] Configured Lic search path (25.01-s002): /home/dex/cadence/licence/cadence.dat
+[09/08 14:37:45      0s] 
+[09/08 14:37:45      0s] 		invs	Innovus Implementation System	INVS100	25.1
+[09/08 14:37:45      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[09/08 14:38:00     29s] Memory management switch to non-aggressive memory release mode.
+[09/08 14:38:00     29s] 
+[09/08 14:38:00     29s] OS Mmap count monitoring thread starts. Limit of OS Mmap count is 65530
+[09/08 14:38:00     29s] 
+[09/08 14:38:00     29s] 
+[09/08 14:38:00     29s] 
+[09/08 14:38:03     34s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v25.13-s088_1 (64bit) 03/26/2026 12:37 (Linux 4.18.0-305.el8.x86_64)
+[09/08 14:38:08     41s] @(#)CDS: NanoRoute 25.13-s088_1 NR260309-1855/25_13-UB (database version 18.20.683) {superthreading v2.20}
+[09/08 14:38:08     41s] @(#)CDS: AAE 25.13-s023 (64bit) 03/26/2026 (Linux 4.18.0-305.el8.x86_64)
+[09/08 14:38:08     41s] @(#)CDS: CTE 25.13-s044_1 () Mar 24 2026 17:45:14 ( )
+[09/08 14:38:08     41s] @(#)CDS: SYNTECH 25.13-s012_1 () Mar 10 2026 03:01:02 ( )
+[09/08 14:38:08     41s] @(#)CDS: CPE v25.13-s019
+[09/08 14:38:08     41s] @(#)CDS: IQuantus/TQuantus 24.1.0-s476 (64bit) Wed Feb 11 22:11:27 PST 2026 (Linux 4.18.0-305.el8.x86_64)
+[09/08 14:38:08     41s] @(#)CDS: OA 22.62-p019 Fri Nov 14 16:24:43 2025
+[09/08 14:38:08     41s] @(#)CDS: SGN 23.10-d005 (03-Oct-2023) (64 bit executable, TkQt5.15.9)
+[09/08 14:38:08     41s] @(#)CDS: RCDB 11.15.0
+[09/08 14:38:08     41s] @(#)CDS: STYLUS 25.13-e003_1 (02/12/2026 10:16 PST)
+[09/08 14:38:08     41s] @(#)CDS: IntegrityPlanner-25.13-417 (25.13) (2026-03-04 17:01:52+0800)
+[09/08 14:38:08     41s] @(#)CDS: SYNTHESIS_ENGINE 25.13-s071
+[09/08 14:38:08     41s] @(#)CDS: TCDB v25.12-s001
+[09/08 14:38:08     41s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_3807_2526940a-4c08-49c1-be13-e02a18eb58c4_eda_dex_hHSsgo.
+
+[09/08 14:38:08     41s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_3807_2526940a-4c08-49c1-be13-e02a18eb58c4_eda_dex_hHSsgo.
+[09/08 14:38:08     41s] 
+[09/08 14:38:08     41s] The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+[09/08 14:38:10     43s] Info: Process UID = 3807 / 2526940a-4c08-49c1-be13-e02a18eb58c4 / gfEXDENhKk
+[09/08 14:38:14     47s] 
+[09/08 14:38:14     47s] **INFO:  MMMC transition support version v31-84 
+[09/08 14:38:14     47s] 
+[09/08 14:38:19     52s] @innovus 1> gui_select -point {0.06400 0.07400}
+[09/08 14:38:25     53s] @innovus 2> set_db init_power_nets VDD
+[09/08 14:40:20     66s] @innovus 3> set_db init_ground_nets VSS
+[09/08 14:40:20     66s] @innovus 4> #################################
+[09/08 14:40:20     66s] read_mmmc ../mmmc.tcl
+[09/08 14:40:20     66s] #################################
+[09/08 14:40:20     66s] #@ Begin verbose source ../mmmc.tcl (pre)
+[09/08 14:40:20     66s] @file 1: #      created by HuuTien
+[09/08 14:40:20     66s] @file 2: #===============================
+[09/08 14:40:20     66s] @file 3: #=    creata multi-corners     =
+[09/08 14:40:20     66s] @file 4: #===============================
+[09/08 14:40:20     66s] @file 5:
+[09/08 14:40:20     66s] @@file 6: create_library_set -name wcl_slow -timing { \
+[09/08 14:40:20     66s]     ../lib/slow_vdd1v0_basicCells.lib
+[09/08 14:40:20     66s] }
+[09/08 14:40:20     66s] @file 9:
+[09/08 14:40:20     66s] @@file 10: create_library_set -name wcl_fast -timing { \
+[09/08 14:40:20     66s]     ../lib/fast_vdd1v0_basicCells.lib
+[09/08 14:40:20     66s] }
+[09/08 14:40:20     66s] @file 13:
+[09/08 14:40:20     66s] @@file 14: create_opcond -name op_cond_wcl_slow   -process 1  -voltage 0.9   -temperature 125
+[09/08 14:40:20     66s] @@file 15: create_opcond -name op_cond_wcl_fast   -process 1  -voltage 1.1    -temperature 0
+[09/08 14:40:20     66s] @file 16:
+[09/08 14:40:20     66s] @@file 17: create_timing_condition -name timing_cond_wcl_slow  -opcond op_cond_wcl_slow    -library_sets {wcl_slow}
+[09/08 14:40:20     66s] @@file 18: create_timing_condition -name timing_cond_wcl_fast  -opcond op_cond_wcl_fast    -library_sets {wcl_fast}
+[09/08 14:40:20     66s] @file 19:
+[09/08 14:40:20     66s] @@file 20: create_rc_corner -name rc_corner -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl
+[09/08 14:40:20     66s] @file 21:
+[09/08 14:40:20     66s] @@file 22: create_delay_corner -name delay_corner_wcl_slow -early_timing_condition timing_cond_wcl_slow \
+[09/08 14:40:20     66s]                                                 -late_timing_condition  timing_cond_wcl_slow \
+[09/08 14:40:20     66s]                                                 -early_rc_corner    rc_corner \
+[09/08 14:40:20     66s]                                                 -late_rc_corner     rc_corner 
+[09/08 14:40:20     66s] @@file 26: create_delay_corner -name delay_corner_wcl_fast -early_timing_condition timing_cond_wcl_fast \
+[09/08 14:40:20     66s]                                                 -late_timing_condition  timing_cond_wcl_fast \
+[09/08 14:40:20     66s]                                                 -early_rc_corner    rc_corner \
+[09/08 14:40:20     66s]                                                 -late_rc_corner     rc_corner
+[09/08 14:40:20     66s] @file 30:
+[09/08 14:40:20     66s] @file 31:
+[09/08 14:40:20     66s] @file 32: #===============================
+[09/08 14:40:20     66s] @file 33: #=    creata multi-modes       =
+[09/08 14:40:20     66s] @file 34: #===============================
+[09/08 14:40:20     66s] @file 35:
+[09/08 14:40:20     66s] @@file 36: create_constraint_mode -name functional_wcl_slow -sdc_files { \
+[09/08 14:40:20     66s]     ../constraints/constraints_top.sdc   
+[09/08 14:40:20     66s] }
+[09/08 14:40:20     66s] @file 39:
+[09/08 14:40:20     66s] @@file 40: create_constraint_mode -name functional_wcl_fast -sdc_files { \
+[09/08 14:40:20     66s]     ../constraints/constraints_top.sdc   
+[09/08 14:40:20     66s] }
+[09/08 14:40:20     66s] @file 43:
+[09/08 14:40:20     66s] @file 44: #===============================
+[09/08 14:40:20     66s] @file 45: #=    creata multi-views       =
+[09/08 14:40:20     66s] @file 46: #===============================
+[09/08 14:40:20     66s] @file 47:
+[09/08 14:40:20     66s] @@file 48: create_analysis_view -name view_wcl_slow -constraint_mode functional_wcl_slow -delay_corner delay_corner_wcl_slow
+[09/08 14:40:20     66s] @@file 49: create_analysis_view -name view_wcl_fast -constraint_mode functional_wcl_fast -delay_corner delay_corner_wcl_fast
+[09/08 14:40:20     66s] @file 50:
+[09/08 14:40:20     66s] @@file 51: set_analysis_view -setup { view_wcl_slow view_wcl_fast}
+[09/08 14:40:20     66s] #@ End verbose source ../mmmc.tcl
+[09/08 14:40:20     66s] Reading wcl_slow timing library '/home/dex/workspace/counter_design_45nm/lib/slow_vdd1v0_basicCells.lib' ...
+[09/08 14:40:20     67s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/dex/workspace/counter_design_45nm/lib/slow_vdd1v0_basicCells.lib)
+[09/08 14:40:21     67s] Read 480 cells in library 'slow_vdd1v0' 
+[09/08 14:40:21     67s] Ending "PreSetAnalysisView" (total cpu=0:00:00.8, real=0:00:01.0, peak res=1829.9M, current mem=1718.9M)
+[09/08 14:40:21     67s] #################################
+[09/08 14:40:21     67s] read_physical -lef {../lef/gsclib045_tech.lef ../lef/gsclib045_macro.lef}
+[09/08 14:40:21     67s] #################################
+[09/08 14:40:21     67s] 
+[09/08 14:40:21     67s] Loading LEF file ../lef/gsclib045_tech.lef ...
+[09/08 14:40:21     67s] Set DBUPerIGU to M2 pitch 400.
+[09/08 14:40:21     67s] 
+[09/08 14:40:21     67s] Loading LEF file ../lef/gsclib045_macro.lef ...
+[09/08 14:40:21     67s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[09/08 14:40:21     67s] Type 'man IMPLF-200' for more detail.
+[09/08 14:40:21     67s] 
+[09/08 14:40:21     67s] ##  Check design process and node:  
+[09/08 14:40:21     67s] ##  Both design process and tech node are not set.
+[09/08 14:40:21     67s] 
+[09/08 14:40:21     67s] #################################
+[09/08 14:40:21     67s] read_netlist ../rtl/counter.v
+[09/08 14:40:21     67s] #################################
+[09/08 14:40:21     67s] #% Begin Load netlist data ... (date=09/08 14:40:21, mem=1732.8M)
+[09/08 14:40:21     67s] *** Begin netlist parsing (mem=1732.8M) ***
+[09/08 14:40:21     67s] Created 480 new cells from 1 timing libraries.
+[09/08 14:40:21     67s] Reading netlist ...
+[09/08 14:40:21     67s] Backslashed names will retain backslash and a trailing blank character.
+[09/08 14:40:21     67s] **ERROR: (IMPVL-209):	In Verilog file '../rtl/counter.v', check line 3 near the text reg for the issue: 'syntax error'.  Update the text accordingly.
+[09/08 14:40:21     67s] Type 'man IMPVL-209' for more detail.
+[09/08 14:40:21     67s] Verilog file '../rtl/counter.v' has errors!  See above.
+[09/08 14:40:21     67s] 
+[09/08 14:40:21     67s] *** Memory Usage v#1 (Current mem = 1744.273M, initial mem = 985.867M) ***
+[09/08 14:40:21     67s] #% End Load netlist data ... (date=09/08 14:40:21, total cpu=0:00:00.0, real=0:00:00.0, peak res=1744.3M, current mem=1744.3M)
+[09/08 14:40:21     67s] **ERROR: (IMPVL-902):	Failed to read netlist ../rtl/counter.v. See previous error messages for details.  Resolve the issues and reload the design.
+[09/08 14:40:33     70s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_netlist ../rtl/counter.v'.For more details, refer to error message from console.
+[09/08 14:40:33     70s] 
+[09/08 14:40:33     70s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[09/08 14:40:33     70s] The MMMC init sequence looks like this: 
+[09/08 14:40:33     70s] read_mmmc top.mmmc 
+[09/08 14:40:33     70s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[09/08 14:40:33     70s] read_netlist top.v OR 'elaborate_design -script hdl.tcl' for Synthesis flow 
+[09/08 14:40:33     70s] read_power_intent -1801 top.1801   #only for MSV designs 
+[09/08 14:40:33     70s] init_design 
+[09/08 14:40:33     70s] 
+[09/08 14:40:33     70s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[09/08 14:40:33     70s] read_libs all.lib 
+[09/08 14:40:33     70s] read_netlist top.v 
+[09/08 14:40:33     70s] read_sdc top.sdc 
+[09/08 14:40:33     70s] init_design 
+[09/08 14:40:33     70s] 
+[09/08 14:40:33     70s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[09/08 14:40:33     70s] Common UI User Guide for more details.
+[09/08 14:40:56     73s] #################################
+[09/08 14:40:56     73s] read_mmmc ../mmmc.tcl
+[09/08 14:40:56     73s] #################################
+[09/08 14:40:56     73s] **WARN: (TCLCMD-1306):	read_mmmc command should be called once before init_design.
+[09/08 14:41:05     75s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc ../mmmc.tcl'.For more details, refer to error message from console.
+[09/08 14:41:05     75s] 
+[09/08 14:41:05     75s] #################################
+[09/08 14:41:05     75s] read_physical -lef {../lef/gsclib045_tech.lef ../lef/gsclib045_macro.lef}
+[09/08 14:41:05     75s] #################################
+[09/08 14:41:05     75s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[09/08 14:41:05     75s] The MMMC init sequence looks like this: 
+[09/08 14:41:05     75s] read_mmmc top.mmmc 
+[09/08 14:41:05     75s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[09/08 14:41:05     75s] read_netlist top.v OR 'elaborate_design -script hdl.tcl' for Synthesis flow 
+[09/08 14:41:05     75s] read_power_intent -1801 top.1801   #only for MSV designs 
+[09/08 14:41:05     75s] init_design 
+[09/08 14:41:05     75s] 
+[09/08 14:41:05     75s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[09/08 14:41:05     75s] read_libs all.lib 
+[09/08 14:41:05     75s] read_netlist top.v 
+[09/08 14:41:05     75s] read_sdc top.sdc 
+[09/08 14:41:05     75s] init_design 
+[09/08 14:41:05     75s] 
+[09/08 14:41:05     75s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[09/08 14:41:05     75s] Common UI User Guide for more details.
+[09/08 14:41:09     77s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_physical -lef {../lef/gsclib045_tech.lef ../lef/gsclib045_macro.lef}'.For more details, refer to error message from console.
+[09/08 14:41:09     77s] 
+[09/08 14:41:09     77s] #################################
+[09/08 14:41:09     77s] read_netlist ../rtl/counter.v
+[09/08 14:41:09     77s] #################################
+[09/08 14:41:09     77s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[09/08 14:41:09     77s] The MMMC init sequence looks like this: 
+[09/08 14:41:09     77s] read_mmmc top.mmmc 
+[09/08 14:41:09     77s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[09/08 14:41:09     77s] read_netlist top.v OR 'elaborate_design -script hdl.tcl' for Synthesis flow 
+[09/08 14:41:09     77s] read_power_intent -1801 top.1801   #only for MSV designs 
+[09/08 14:41:09     77s] init_design 
+[09/08 14:41:09     77s] 
+[09/08 14:41:09     77s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[09/08 14:41:09     77s] read_libs all.lib 
+[09/08 14:41:09     77s] read_netlist top.v 
+[09/08 14:41:09     77s] read_sdc top.sdc 
+[09/08 14:41:09     77s] init_design 
+[09/08 14:41:09     77s] 
+[09/08 14:41:09     77s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[09/08 14:41:09     77s] Common UI User Guide for more details.
+[09/08 14:41:10     77s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_netlist ../rtl/counter.v'.For more details, refer to error message from console.
+[09/08 14:41:10     77s] 
+[09/08 14:41:10     77s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[09/08 14:41:10     77s] The MMMC init sequence looks like this: 
+[09/08 14:41:10     77s] read_mmmc top.mmmc 
+[09/08 14:41:10     77s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[09/08 14:41:10     77s] read_netlist top.v OR 'elaborate_design -script hdl.tcl' for Synthesis flow 
+[09/08 14:41:10     77s] read_power_intent -1801 top.1801   #only for MSV designs 
+[09/08 14:41:10     77s] init_design 
+[09/08 14:41:10     77s] 
+[09/08 14:41:10     77s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[09/08 14:41:10     77s] read_libs all.lib 
+[09/08 14:41:10     77s] read_netlist top.v 
+[09/08 14:41:10     77s] read_sdc top.sdc 
+[09/08 14:41:10     77s] init_design 
+[09/08 14:41:10     77s] 
+[09/08 14:41:10     77s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[09/08 14:41:10     77s] Common UI User Guide for more details.
+[09/08 14:55:52    347s] 
+[09/08 14:55:52    347s] --------------------------------------------------------------------------------
+[09/08 14:55:52    347s] Exiting Innovus on Tue Sep  8 14:55:52 2026
+[09/08 14:55:52    347s]   Total CPU time:     0:05:47
+[09/08 14:55:52    347s]   Total real time:    0:18:09
+[09/08 14:55:52    347s]   Peak memory (main): 1803.39MB
+[09/08 14:55:52    347s] 
+[09/08 14:55:52    347s] 
+[09/08 14:55:52    347s] *** Memory Usage v#1 (Current mem = 1802.449M, initial mem = 985.867M) ***
+[09/08 14:55:52    347s] 
+[09/08 14:55:52    347s] *** Summary of all messages that are not suppressed in this session:
+[09/08 14:55:52    347s] Severity  ID               Count  Summary                                  
+[09/08 14:55:52    347s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[09/08 14:55:52    347s] ERROR     IMPSYT-16031         4  %s                                       
+[09/08 14:55:52    347s] ERROR     IMPVL-902            1  Failed to read netlist %s. See previous ...
+[09/08 14:55:52    347s] ERROR     IMPVL-209            1  In Verilog file '%s', check line %d near...
+[09/08 14:55:52    347s] ERROR     IMPIMEX-12           4  'init_design' failed. You are missing on...
+[09/08 14:55:52    347s] WARNING   TCLCMD-1306          1  read_mmmc command should be called once ...
+[09/08 14:55:52    347s] WARNING   TECHLIB-302          1  No function defined for cell '%s'. The c...
+[09/08 14:55:52    347s] *** Message Summary: 3 warning(s), 10 error(s)
+[09/08 14:55:52    347s] 
+[09/08 14:55:52    347s] --- Ending "Innovus" (totcpu=0:05:47, real=0:18:07, mem=1802.4M) ---
