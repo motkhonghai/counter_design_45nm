@@ -1,4 +1,3 @@
-rm -rf *.log*
-rm -rf *.cmd*
-rm -rf *.db*
-rm -rf OUTPUT/ reports/ test_scripts/ fv/
+rm -rf genus.log*
+rm -rf genus.cmd*
+rm -rf outputs reports test_scripts fv

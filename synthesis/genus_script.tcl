@@ -15,7 +15,6 @@ syn_map
 syn_opt
 
 #reports
-report_timing_summary > reports/report_timing_summary.rpt
 report_timing > reports/report_timing.rpt
 report_power  > reports/report_power.rpt
 report_area   > reports/report_area.rpt
