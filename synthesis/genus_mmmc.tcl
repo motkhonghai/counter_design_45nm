@@ -126,7 +126,14 @@ report_area     > [file join $_REPORTS_PATH ${DESIGN}_area.rpt]
 report_qor      > [file join $_REPORTS_PATH ${DESIGN}_qor.rpt]
 
 write_hdl > [file join $_OUTPUTS_PATH ${DESIGN}_netlist.v]
-write_sdc > [file join $_OUTPUTS_PATH ${DESIGN}_sdc.sdc]
+
+# A multi-mode design requires the analysis view to be specified explicitly.
+# Export one SDC per active view so neither corner is silently omitted.
+write_sdc -view view_wcl_slow \
+    > [file join $_OUTPUTS_PATH ${DESIGN}_view_wcl_slow.sdc]
+write_sdc -view view_wcl_fast \
+    > [file join $_OUTPUTS_PATH ${DESIGN}_view_wcl_fast.sdc]
+
 write_db [file join $_OUTPUTS_PATH ${DESIGN}.db]
 
 # Export a self-consistent Innovus handoff (netlist, constraints and MMMC data).
