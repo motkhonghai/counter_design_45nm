@@ -1,12 +1,3 @@
-# Innovus Stylus Common UI MMMC physical-design flow for the counter design.
-# Run from any directory with: innovus -stylus -files <path>/run_mmmc.tcl
-
-if {[file exists /proc/cpuinfo]} {
-    sh grep "model name" /proc/cpuinfo
-    sh grep "cpu MHz" /proc/cpuinfo
-}
-puts "Hostname : [info hostname]"
-
 ###############################################################################
 ## Global variables and paths
 ###############################################################################
