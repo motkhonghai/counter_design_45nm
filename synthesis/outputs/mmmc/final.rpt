@@ -1,0 +1,69 @@
+
+
+Working Directory = /home/icd1/workspace/counter_design_45nm/synthesis
+QoS Summary for counter
+=========================================================================================================
+Metric                          syn_generic     syn_generic1    syn_map         syn_map1        syn_opt        
+=========================================================================================================
+
+View : view_wcl_slow
+Slack (ps):                     8,679           8,679           8,036           8,036           8,017
+  R2R (ps):                     8,892           8,892           8,036           8,036           8,017
+  I2R (ps):                  no_value        no_value        no_value        no_value        no_value
+  R2O (ps):                     8,679           8,679           8,678           8,678           8,653
+  I2O (ps):                  no_value        no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value        no_value        no_value
+TNS (ps):                           0               0               0               0               0
+  R2R (ps):                         0               0               0               0               0
+  I2R (ps):                  no_value        no_value        no_value        no_value        no_value
+  R2O (ps):                         0               0               0               0               0
+  I2O (ps):                  no_value        no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value        no_value        no_value
+Failing Paths:                      0               0               0               0               0
+
+View : view_wcl_fast
+Slack (ps):                     8,918           8,918           8,914           8,914           8,913
+  R2R (ps):                     9,718           9,718           9,567           9,567           9,568
+  I2R (ps):                  no_value        no_value        no_value        no_value        no_value
+  R2O (ps):                     8,918           8,918           8,914           8,914           8,913
+  I2O (ps):                  no_value        no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value        no_value        no_value
+TNS (ps):                           0               0               0               0               0
+  R2R (ps):                         0               0               0               0               0
+  I2R (ps):                  no_value        no_value        no_value        no_value        no_value
+  R2O (ps):                         0               0               0               0               0
+  I2O (ps):                  no_value        no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value        no_value        no_value
+Failing Paths:                      0               0               0               0               0
+
+Cell Area:                        147             147              73              73              73
+Total Cell Area:                  147             147              73              73              73
+Leaf Instances:                    34              34              21              21              20
+Total Instances:                   34              34              21              21              20
+Utilization (%):                 0.00            0.00            0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value        no_value        no_value
+=========================================================================================================
+CPU  Runtime (h:m:s):        00:00:01        00:00:01        00:00:00        00:00:00        00:00:00
+Real Runtime (h:m:s):        00:00:01        00:00:01        00:00:01        00:00:01        00:00:00
+CPU  Elapsed (h:m:s):        00:00:55        00:00:55        00:00:59        00:00:59        00:00:59
+Real Elapsed (h:m:s):        00:01:04        00:01:05        00:01:09        00:01:10        00:01:10
+Memory (MB):                  2991.10         2999.11         2987.26         2995.26         2987.26
+=========================================================================================================
+=========================================================================================================
+Flow Settings:
+=========================================================================================================
+Total Runtime (h:m:s): 00:01:10
+Total Memory (MB):     2995.26
+Executable Version:    25.13-s071_1
+=========================================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
