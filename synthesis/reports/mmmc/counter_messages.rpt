@@ -1,13 +1,13 @@
   =================
    Message Summary
   =================
-----------------------------------------------------------------------------------------------------------------------------
-|  Id   |  Sev  |Count|                                            Message Text                                            |
-----------------------------------------------------------------------------------------------------------------------------
-|MESG-11|Warning|    4|Maximum message print count reached.                                                                |
-|SYNTH-8|Info   |    1|Done incrementally optimizing.                                                                      |
-|TUI-332|Warning|   16|Usage of path_group with define_cost_group defined before will be obsolete, going forward use       |
-|       |       |     | group_path instead.                                                                                |
-|       |       |     |Usage of path_group with define_cost_group defined before will be obsolete, going forward use       |
-|       |       |     | group_path instead.                                                                                |
-----------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+|  Id   |  Sev  |Count|                                 Message Text                                  |
+-------------------------------------------------------------------------------------------------------
+|MESG-11|Warning|    4|Maximum message print count reached.                                           |
+|SYNTH-8|Info   |    1|Done incrementally optimizing.                                                 |
+|TUI-332|Warning|   16|Usage of path_group with define_cost_group defined before will be obsolete,    |
+|       |       |     | going forward use group_path instead.                                         |
+|       |       |     |Usage of path_group with define_cost_group defined before will be obsolete,    |
+|       |       |     | going forward use group_path instead.                                         |
+-------------------------------------------------------------------------------------------------------

@@ -127,8 +127,7 @@ write_sdc -view view_wcl_fast \
 
 write_db [file join $_OUTPUTS_PATH ${DESIGN}.db]
 
-# Export a self-consistent Innovus handoff (netlist, constraints and MMMC data).
-write_design -innovus -base_name [file join $_OUTPUTS_PATH $DESIGN]
+write_db -common [file join $_OUTPUTS_PATH INVS] -design $DESIGN
 
 puts "Final Runtime & Memory."
 time_info FINAL
