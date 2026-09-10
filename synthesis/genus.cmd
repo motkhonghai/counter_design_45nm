@@ -5,3 +5,5 @@
 # OS:   AlmaLinux 8.10 (Cerulean Leopard)
 
 source genus_mmmc.tcl
+report_timing_summary
+report_timing
