@@ -1,12 +1,3 @@
-# Genus Common UI MMMC synthesis flow for the counter design.
-# Run from any directory with: genus -files <path>/genus_mmmc.tcl
-
-if {[file exists /proc/cpuinfo]} {
-    sh grep "model name" /proc/cpuinfo
-    sh grep "cpu MHz" /proc/cpuinfo
-}
-puts "Hostname : [info hostname]"
-
 ###############################################################################
 ## Global variables and tool settings
 ###############################################################################
