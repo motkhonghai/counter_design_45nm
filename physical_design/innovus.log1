@@ -1,0 +1,44 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v25.13-s088_1, built Thu Mar 26 12:37:48 PDT 2026
+Options:	-stylus 
+Date:		Thu Sep 10 17:01:36 2026
+Host:		eda (x86_64 w/Linux 4.18.0-553.137.1.el8_10.x86_64) (12cores*24cpus*Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz 30720KB)
+OS:		AlmaLinux 8.10 (Cerulean Leopard)
+
+License:
+		[17:01:38.435105] Configured Lic search path (25.01-s002): /home/icd1/cadence/lisence/cadence.dat
+
+		invs	Innovus Implementation System	INVS100	25.1
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_198604_697ad62d-b4c7-4a01-9cf0-3cafa025fa0e_eda_icd1_Z1aEMW.
+
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+Info: Process UID = 198604 / 697ad62d-b4c7-4a01-9cf0-3cafa025fa0e / Yk1UnBkzwb
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> source run_mmmc.tcl 
+#@ Begin verbose source (pre): source run_mmmc.tcl 
+@file 1: # Innovus Stylus Common UI MMMC physical-design flow for the counter design.
+@file 2: # Run from any directory with: innovus -stylus -files <path>/run_mmmc.tcl
+@file 3:
+@file 4: if {[file exists /proc/cpuinfo]} {
+@file 5: sh grep "model name" /proc/cpuinfo
+/bin/grep: /bin/grep: cannot execute binary file
+**ERROR: (IMPSE-110):	File 'run_mmmc.tcl' line 5: child process exited abnormally.
+@file 7: }
+**ERROR: (IMPSE-110):	File 'run_mmmc.tcl' line 4: child process exited abnormally.
+#@ End verbose source run_mmmc.tcl
+child process exited abnormally
+child process exited abnormally
+@innovus 2> exit
+*** Message Summary: 0 warning(s), 2 error(s)
+
+
+*** Memory Usage v#1 (Current mem = 2130.941M, initial mem = 988.465M) ***
+--- Ending "Innovus" (totcpu=0:01:02, real=0:01:35, mem=2130.9M) ---

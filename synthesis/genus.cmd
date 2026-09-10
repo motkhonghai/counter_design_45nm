@@ -5,3 +5,4 @@
 # OS:   AlmaLinux 8.10 (Cerulean Leopard)
 
 source genus_mmmc.tcl
+exit

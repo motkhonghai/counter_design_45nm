@@ -3699,3 +3699,10 @@ Outputs: /home/icd1/workspace/counter_design_45nm/synthesis/outputs/mmmc
 @file(genus_mmmc.tcl) 136: puts "Reports: $_REPORTS_PATH"
 Reports: /home/icd1/workspace/counter_design_45nm/synthesis/reports/mmmc
 #@ End verbose source ./genus_mmmc.tcl
+@genus:root: 2> exit
+
+Lic Summary:
+[11:42:15.001344] Cdslmd servers: /home/icd1/cadence/lisence/cadence.dat
+[11:42:15.016496] Feature usage summary:
+[11:42:15.285343]  Genus_Synthesis 
+Normal exit.
