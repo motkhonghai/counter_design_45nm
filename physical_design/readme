@@ -1,2 +1,10 @@
 Innovus version 25.1
 RTL2GDS Course version 7.0
+
+MMMC physical-design flow: run_mmmc.tcl
+Launch with Stylus Common UI:
+
+    innovus -stylus -files run_mmmc.tcl
+
+On the first run, the flow creates pins_mmmc.io and suspends. Edit the I/O
+template, save it, then enter "resume" at the Innovus prompt.
