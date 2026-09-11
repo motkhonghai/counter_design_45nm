@@ -45,4 +45,5 @@
 ::db::check_and_set_root_attr route_global_exp_timing_driven_std_delay 41.7
 ::db::check_and_set_root_attr route_re_insert_filler_cell_list {FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1}
 ::db::check_and_set_root_attr route_re_insert_filler_cell_list_from_file false
+::db::check_and_set_root_attr route_top_routing_layer 11
 ::db::check_and_set_root_attr write_def_stream_check_uncolored false

@@ -27,6 +27,7 @@ catch {setNanoRouteMode -quiet -route_global_exp_timing_driven_std_delay 41.7000
 catch {setNanoRouteMode -quiet -route_exp_design_mode_bottom_routing_layer 2}
 catch {setNanoRouteMode -quiet -route_re_insert_filler_cell_list "FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1"}
 catch {setNanoRouteMode -quiet -route_re_insert_filler_cell_list_from_file false}
+catch {setNanoRouteMode -quiet -route_top_routing_layer 11}
 
 catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
 catch { setUsefulSkewMode -opt_skew_eco_route false }

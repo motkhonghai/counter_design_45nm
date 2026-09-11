@@ -8,6 +8,7 @@ catch { setExtractRCMode  -engine preRoute -total_c_th 0 -relative_c_th 1 -coupl
 catch {setNanoRouteMode -quiet -extract_qrc_n2p_accuracy_enhancement true}
 catch {setNanoRouteMode -quiet -route_extract_third_party_compatible false}
 catch {setNanoRouteMode -quiet -route_exp_design_mode_bottom_routing_layer 2}
+catch {setNanoRouteMode -quiet -route_top_routing_layer 11}
 
 catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
 catch { setDelayCalMode -engine aae }

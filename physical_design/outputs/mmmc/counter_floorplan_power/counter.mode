@@ -10,6 +10,7 @@ catch {setNanoRouteMode -quiet -route_extract_third_party_compatible false}
 catch {setNanoRouteMode -quiet -route_exp_design_mode_bottom_routing_layer 2}
 catch {setNanoRouteMode -quiet -route_re_insert_filler_cell_list "FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1"}
 catch {setNanoRouteMode -quiet -route_re_insert_filler_cell_list_from_file false}
+catch {setNanoRouteMode -quiet -route_top_routing_layer 11}
 
 catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
 catch { setDelayCalMode -enable_hier_save_restore_flow false }

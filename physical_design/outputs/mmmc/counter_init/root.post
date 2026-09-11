@@ -20,4 +20,5 @@
 ::db::check_and_set_root_attr opt_multi_bit_flop_name_separator _MB_
 ::db::check_and_set_root_attr route_exp_design_mode_bottom_routing_layer 2
 ::db::check_and_set_root_attr route_extract_third_party_compatible false
+::db::check_and_set_root_attr route_top_routing_layer 11
 ::db::check_and_set_root_attr write_def_stream_check_uncolored false
