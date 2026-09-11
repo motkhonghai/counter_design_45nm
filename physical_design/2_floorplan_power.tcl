@@ -111,7 +111,6 @@ route_special \
     -layer_change_range [list Metal1(1) Metal11(11)] \
     -crossover_via_layer_range [list Metal1(1) Metal11(11)] \
     -target_via_layer_range [list Metal1(1) Metal11(11)] \
-    -block_pin_target nearest_target \
     -core_pin_target first_after_row_end \
     -allow_jogging true \
     -allow_layer_change true

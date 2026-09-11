@@ -49,7 +49,7 @@ report_area  > [file join $REPORT_PATH area.rpt]
 report_power > [file join $REPORT_PATH power.rpt]
 
 check_drc > [file join $REPORT_PATH drc.rpt]
-verify_connectivity > [file join $REPORT_PATH connectivity.rpt]
+check_connectivity > [file join $REPORT_PATH connectivity.rpt]
 
 # Metal fill and foundry LVS are not run here because the required PDK rule
 # decks are not included in this project.
