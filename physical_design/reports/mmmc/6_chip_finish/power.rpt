@@ -8,6 +8,7 @@ Power Net Detected:
 Using Power View: view_wcl_slow.
 AAE_INFO: opIsDesignInPostRouteState() is 1
 AAE_INFO: resetNetProps viewIdx 0 
+AAE_INFO: resetNetProps viewIdx 1 
 Starting SI iteration 1 using Infinite Timing Windows
 #################################################################################
 # Design Stage: PostRoute
@@ -18,28 +19,33 @@ Starting SI iteration 1 using Infinite Timing Windows
 # Signoff Settings: SI On 
 #################################################################################
 AAE_INFO: 1 threads acquired from CTE.
-Start delay calculation (fullDC) (1 T). (MEM=3531.04)
+Start delay calculation (fullDC) (1 T). (MEM=3091.5)
 Total number of fetched objects 24
 AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
 AAE_INFO-618: Total number of nets in the design is 26,  92.3 percent of the nets selected for SI analysis
 Total number of fetched objects 24
 AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
 AAE_INFO-618: Total number of nets in the design is 26,  92.3 percent of the nets selected for SI analysis
-End delay calculation. (MEM=3548.86 CPU=0:00:00.0 REAL=0:00:00.0)
-End delay calculation (fullDC). (MEM=3548.86 CPU=0:00:00.1 REAL=0:00:01.0)
-Save waveform /tmp/innovus_temp_85141_4a5398aa-728e-47c7-9a83-d9d84f03a1e4_eda_icd1_KILzo9/.AAE_VMT6pW/.AAE_85141_4a5398aa-728e-47c7-9a83-d9d84f03a1e4/waveform.data...
-Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 3547.7M)
+End delay calculation. (MEM=3108.1 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=3108.1 CPU=0:00:00.1 REAL=0:00:00.0)
+Save waveform /tmp/innovus_temp_97533_8108cac0-882b-480e-a7d6-c830044e22be_eda_icd1_VGqj6T/.AAE_zxOuu7/.AAE_97533_8108cac0-882b-480e-a7d6-c830044e22be/waveform.data...
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 3108.3M)
 Add other clocks and setupCteToAAEClockMapping during iter 1
-Loading CTE timing window is completed (CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 3547.7M)
+Loading CTE timing window is completed (CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 3108.3M)
 Starting SI iteration 2
-Start delay calculation (fullDC) (1 T). (MEM=3531.73)
+Start delay calculation (fullDC) (1 T). (MEM=3107.74)
 Glitch Analysis: View view_wcl_slow -- Total Number of Nets Skipped = 0. 
 Glitch Analysis: View view_wcl_slow -- Total Number of Nets Analyzed = 0. 
 Total number of fetched objects 24
 AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
 AAE_INFO-618: Total number of nets in the design is 26,  3.8 percent of the nets selected for SI analysis
-End delay calculation. (MEM=3533.84 CPU=0:00:00.0 REAL=0:00:00.0)
-End delay calculation (fullDC). (MEM=3533.84 CPU=0:00:00.0 REAL=0:00:00.0)
+Glitch Analysis: View view_wcl_fast -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View view_wcl_fast -- Total Number of Nets Analyzed = 24. 
+Total number of fetched objects 24
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 26,  3.8 percent of the nets selected for SI analysis
+End delay calculation. (MEM=3112.9 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=3112.9 CPU=0:00:00.0 REAL=0:00:00.0)
 Load RC corner of view view_wcl_slow
 
 Begin Power Analysis
@@ -49,52 +55,52 @@ Begin Power Analysis
 
 Begin Processing Timing Library for Power Calculation
 
-Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3532.68MB/7310.18MB/4464.76MB)
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3100.34MB/5929.74MB/3100.34MB)
 
 
 
 Begin Processing Power Net/Grid for Power Calculation
 
-Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3532.68MB/7310.18MB/4464.76MB)
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3100.34MB/5929.74MB/3100.34MB)
 
 Begin Processing Timing Window Data for Power Calculation
 
 clk(100MHz) CK: assigning clock clk to net clk
-Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3532.68MB/7310.18MB/4464.76MB)
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3100.34MB/5929.74MB/3100.34MB)
 
 Begin Processing User Attributes
 
-Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3532.68MB/7310.18MB/4464.76MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3100.34MB/5929.74MB/3100.34MB)
 
 Begin Processing Signal Activity
 
 
 Starting Levelizing
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT)
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 10%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 20%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 30%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 40%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 50%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 60%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 70%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 80%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 90%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT)
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 10%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 20%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 30%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 40%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 50%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 60%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 70%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 80%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 90%
 
 Finished Levelizing
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT)
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT)
 
 Starting Activity Propagation
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT)
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT)
 ** INFO:  (VOLTUS_POWR-1356): No default input activity has been set. Defaulting to 0.2.
 Use 'set_default_switching_activity -input_activity' command to change the default activity value.
 
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 10%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 20%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 10%
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT): 20%
 
 Finished Activity Propagation
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT)
-Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3533.28MB/7310.18MB/4464.76MB)
+2026-Sep-11 15:43:15 (2026-Sep-11 08:43:15 GMT)
+Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3101.12MB/5929.74MB/3101.12MB)
 
 Begin Power Computation
 
@@ -107,49 +113,49 @@ Begin Power Computation
 
 
 Starting Calculating power
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT)
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT)
  ... Calculating switching power
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 10%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 20%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 30%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 40%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 50%
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT): 10%
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT): 20%
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT): 30%
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT): 40%
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT): 50%
  ... Calculating internal and leakage power
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 60%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 70%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 80%
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT): 90%
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT): 60%
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT): 70%
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT): 80%
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT): 90%
 
 Finished Calculating power
-2026-Sep-11 15:25:04 (2026-Sep-11 08:25:04 GMT)
+2026-Sep-11 15:43:16 (2026-Sep-11 08:43:16 GMT)
       # of MSMV cell(s) missing power_level: 0
-Ended Power Computation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3533.28MB/7310.18MB/4464.76MB)
+Ended Power Computation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3101.12MB/5929.74MB/3101.12MB)
 
 Begin Processing User Attributes
 
 Begin Processing set_power
 Ended Processing set_power: (cpu=0:00:00, real=0:00:00,
-mem(process/total/peak)=3533.28MB/7310.18MB/4464.76MB)
-Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3533.28MB/7310.18MB/4464.76MB)
+mem(process/total/peak)=3101.12MB/5929.74MB/3101.12MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3101.12MB/5929.74MB/3101.12MB)
 
-Ended Power Analysis: (cpu=0:00:00, real=0:00:02, mem(process/total/peak)=3533.28MB/7310.18MB/4464.76MB)
+Ended Power Analysis: (cpu=0:00:00, real=0:00:03, mem(process/total/peak)=3101.12MB/5929.74MB/3101.12MB)
 
 Begin Boundary Leakage Calculation
 Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
-mem(process/total/peak)=3534.34MB/7310.18MB/4464.76MB)
+mem(process/total/peak)=3101.12MB/5929.74MB/3101.12MB)
 Begin Static Power Report Generation
 *----------------------------------------------------------------------------------------
 *	Innovus 25.13-s088_1 (64bit) 03/26/2026 12:37 (Linux 4.18.0-305.el8.x86_64)
 *	
 *
-* 	Date & Time:	2026-Sep-11 15:25:06 (2026-Sep-11 08:25:06 GMT)
+* 	Date & Time:	2026-Sep-11 15:43:17 (2026-Sep-11 08:43:17 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
 *	Design: counter
 *
 *	Liberty Libraries used:
-*	        view_wcl_slow: /home/icd1/workspace/counter_design_45nm/lib/slow_vdd1v0_basicCells.lib
+*	        view_wcl_slow: /home/icd1/workspace/counter_design_45nm/physical_design/outputs/mmmc/counter_post_route/libs/mmmc/slow_vdd1v0_basicCells.lib
 *
 *	Parasitic Files used:
 *
@@ -226,5 +232,5 @@ VDD                       0.9   0.002658   0.0001361   1.573e-06    0.002796    
 ** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
 
 Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
-mem(process/total/peak)=3534.34MB/7310.18MB/4464.76MB)
+mem(process/total/peak)=3102.12MB/5929.74MB/3102.12MB)
 

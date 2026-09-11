@@ -1,5 +1,5 @@
 #-check_same_via_cell true               # bool, default=false, user setting
- *** Starting Verify DRC (MEM: 3516.9) ***
+ *** Starting Verify DRC (MEM: 3084.4) ***
 
   VERIFY DRC ...... Starting Verification
   VERIFY DRC ...... Initializing
@@ -25,5 +25,5 @@
 	Metal10        6        6
 	Totals        54       54
 
- *** End Verify DRC (CPU TIME: 0:00:00.0  ELAPSED TIME: 0:00:00.0  MEM: 2.1M) ***
+ *** End Verify DRC (CPU TIME: 0:00:00.0  ELAPSED TIME: 0:00:00.0  MEM: 4.9M) ***
 
