@@ -9,7 +9,7 @@
 set STAGE  3_placement
 set DESIGN counter
 
-set PROJECT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm/
 
 set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_floorplan_power
 set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc

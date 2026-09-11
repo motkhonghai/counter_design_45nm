@@ -9,7 +9,7 @@
 set STAGE  6_chip_finish
 set DESIGN counter
 
-set PROJECT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm/
 
 set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_route
 set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
