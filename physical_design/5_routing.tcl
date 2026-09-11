@@ -9,10 +9,12 @@
 set STAGE  5_routing
 set DESIGN counter
 
-set INPUT_DB    /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_post_cts
-set OUTPUT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc
-set REPORT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/reports/mmmc/5_routing
-set OUTPUT_DB   /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_post_route
+set PROJECT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm
+
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_cts
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/5_routing
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_route
 
 set BOTTOM_ROUTING_LAYER Metal1
 set TOP_ROUTING_LAYER    Metal11

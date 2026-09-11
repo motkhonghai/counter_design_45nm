@@ -9,16 +9,18 @@
 set STAGE  7_export
 set DESIGN counter
 
-set INPUT_DB    /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_finish
-set OUTPUT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc
-set REPORT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/reports/mmmc/7_export
-set OUTPUT_DB   /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_final
-set NETLIST     /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_post_pnr.v
-set DEF_FILE    /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_post_pnr.def
-set SLOW_SDC    /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_post_pnr_view_wcl_slow.sdc
-set FAST_SDC    /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_post_pnr_view_wcl_fast.sdc
-set STREAM_MAP  /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/streamOut.map
-set GDS_FILE    /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_final.gds
+set PROJECT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm
+
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_finish
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/7_export
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_final
+set NETLIST     ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_pnr.v
+set DEF_FILE    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_pnr.def
+set SLOW_SDC    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_pnr_view_wcl_slow.sdc
+set FAST_SDC    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_pnr_view_wcl_fast.sdc
+set STREAM_MAP  ${PROJECT_PATH}/physical_design/streamOut.map
+set GDS_FILE    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_final.gds
 
 file mkdir $OUTPUT_PATH
 file mkdir $REPORT_PATH

@@ -9,10 +9,12 @@
 set STAGE  4_cts
 set DESIGN counter
 
-set INPUT_DB    /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_place
-set OUTPUT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc
-set REPORT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/reports/mmmc/4_cts
-set OUTPUT_DB   /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_post_cts
+set PROJECT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm
+
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_place
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/4_cts
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_cts
 
 file mkdir $OUTPUT_PATH
 file mkdir $REPORT_PATH

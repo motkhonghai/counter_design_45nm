@@ -9,10 +9,12 @@
 set STAGE  6_chip_finish
 set DESIGN counter
 
-set INPUT_DB    /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_post_route
-set OUTPUT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc
-set REPORT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/reports/mmmc/6_chip_finish
-set OUTPUT_DB   /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_finish
+set PROJECT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm
+
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_route
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/6_chip_finish
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_finish
 
 set FILLER_CELLS [list FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1]
 

@@ -9,10 +9,12 @@
 set STAGE  3_placement
 set DESIGN counter
 
-set INPUT_DB    /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_floorplan_power
-set OUTPUT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc
-set REPORT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/reports/mmmc/3_placement
-set OUTPUT_DB   /home/tienpnh/workspace/cadence/counter_design_45nm/physical_design/outputs/mmmc/counter_place
+set PROJECT_PATH /home/tienpnh/workspace/cadence/counter_design_45nm
+
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_floorplan_power
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/3_placement
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_place
 
 file mkdir $OUTPUT_PATH
 file mkdir $REPORT_PATH
