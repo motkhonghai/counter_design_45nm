@@ -4,20 +4,27 @@ RTL2GDS Course version 7.0
 Staged MMMC physical-design flow using the Stylus Common UI
 ============================================================
 
-Run one stage at a time, in order, from this directory:
+Start one Innovus Stylus session from this directory:
 
-    innovus -stylus -files 1_init_design.tcl
-    innovus -stylus -files 2_floorplan_power.tcl
+    innovus -stylus
+
+Then source one stage at a time. Check each stage before continuing:
+
+    source 1_init_design.tcl
+    source 2_floorplan_power.tcl
+    source 3_placement.tcl
+    source 4_cts.tcl
+    source 5_routing.tcl
+    source 6_chip_finish.tcl
+    source 7_export.tcl
+
+Stage 1 reads the Genus handoff. Stages 2-7 reuse the design already loaded in
+memory, so read_db is not called a second time in the same Innovus session.
+
+Each stage still writes a checkpoint. To resume a stage in a new Innovus
+session, run only that stage; it automatically reads the previous checkpoint:
+
     innovus -stylus -files 3_placement.tcl
-    innovus -stylus -files 4_cts.tcl
-    innovus -stylus -files 5_routing.tcl
-    innovus -stylus -files 6_chip_finish.tcl
-    innovus -stylus -files 7_export.tcl
-
-Close Innovus after each completed stage, then start a fresh session for the
-next stage. Every Tcl file declares its own global variables at the top, runs
-its commands in order, and reads the checkpoint created by the previous stage.
-No shared setup file is required.
 
 On the first stage-2 run, Innovus creates pins_mmmc.io and pauses. Edit the
 side/layer/spacing assignments, save the file, then type "resume" to finish

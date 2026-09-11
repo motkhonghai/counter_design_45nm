@@ -20,13 +20,17 @@ file mkdir $OUTPUT_PATH
 file mkdir $REPORT_PATH
 
 ###############################
-# Check and read input database
+# Use in-memory design or read input database
 ###############################
-if {![file exists $INPUT_DB]} {
-    error "Stage 3 database not found: $INPUT_DB"
+if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
+    puts "Use design already loaded in memory"
+} else {
+    if {![file exists $INPUT_DB]} {
+        error "Stage 3 database not found: $INPUT_DB"
+    }
+    read_db $INPUT_DB
+    set PD_DATABASE_LOADED true
 }
-
-read_db $INPUT_DB
 
 ###############################
 # Create and optimize clock tree

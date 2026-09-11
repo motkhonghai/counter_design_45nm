@@ -33,6 +33,7 @@ if {![file exists $INPUT_DB]} {
 # Read Genus MMMC handoff
 ###############################
 read_db -common $INPUT_DB
+set PD_DATABASE_LOADED true
 
 puts "MMMC analysis views: [get_db analysis_views]"
 
