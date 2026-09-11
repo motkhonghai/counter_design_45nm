@@ -45,6 +45,10 @@ Checkpoints are stored in outputs/mmmc. Reports are separated by stage under
 reports/mmmc/<stage_name>.
 
 Stage mapping:
+    Stage 2 creates a 12.2 x 8.55 um core with 5 um margins for power rings.
+    After changing floorplan dimensions, restart run_full.tcl in a fresh session;
+    old placement/routing checkpoints still contain the old geometry.
+
     1 - Design initialization and MMMC handoff
     2 - Floorplanning, I/O assignment and power planning
     3 - Placement and pre-CTS optimization

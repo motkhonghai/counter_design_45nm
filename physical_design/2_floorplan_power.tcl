@@ -20,6 +20,13 @@ set IO_FILE     ${PROJECT_PATH}/physical_design/pins_mmmc.io
 set POWER_NET       VDD
 set GROUND_NET      VSS
 
+# CoreSite is 0.2 x 1.71 um. Keep 5 rows and approximately 70% utilization.
+set CORE_SITE       CoreSite
+set CORE_WIDTH      12.2
+set CORE_HEIGHT     8.55
+# Ring needs 0.6 offset + 2 * 0.7 width + 0.4 spacing = 2.4 um per side.
+set CORE_MARGIN     5.0
+
 file mkdir $OUTPUT_PATH
 file mkdir $REPORT_PATH
 
@@ -37,9 +44,13 @@ if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
 }
 
 ###############################
-# Create floorplan automatically
+# Create floorplan with room for power rings inside the die
 ###############################
-floorplan_design -reshape -predict
+# -core_size: width height left bottom right top (um).
+# Do not predict/reshape afterwards: that can remove the ring margin.
+create_floorplan -site $CORE_SITE -core_size \
+    $CORE_WIDTH $CORE_HEIGHT \
+    $CORE_MARGIN $CORE_MARGIN $CORE_MARGIN $CORE_MARGIN
 
 ###############################
 # Create or read I/O constraint
