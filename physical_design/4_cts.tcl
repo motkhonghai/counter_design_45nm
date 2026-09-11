@@ -9,7 +9,7 @@
 set STAGE  4_cts
 set DESIGN counter
 
-set PROJECT_PATH /home/icd1/workspace/counter_design_45nm/
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
 
 set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_place
 set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
@@ -35,7 +35,6 @@ if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
 ###############################
 # Create and optimize clock tree
 ###############################
-create_clock_tree_spec
 clock_opt_design
 set_propagated_clock [all_clocks]
 
@@ -44,7 +43,6 @@ set_propagated_clock [all_clocks]
 ###############################
 report_timing -late  -max_paths 50 > [file join $REPORT_PATH setup.rpt]
 report_timing -early -max_paths 50 > [file join $REPORT_PATH hold.rpt]
-time_design -report_only > [file join $REPORT_PATH timing_summary.rpt]
 write_db $OUTPUT_DB
 
 puts "Done $STAGE"

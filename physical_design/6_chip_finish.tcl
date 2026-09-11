@@ -9,14 +9,12 @@
 set STAGE  6_chip_finish
 set DESIGN counter
 
-set PROJECT_PATH /home/icd1/workspace/counter_design_45nm/
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
 
 set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_route
 set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
 set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/6_chip_finish
 set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_finish
-
-set FILLER_CELLS [list FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1]
 
 file mkdir $OUTPUT_PATH
 file mkdir $REPORT_PATH
@@ -35,14 +33,10 @@ if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
 }
 
 ###############################
-# Insert filler cells
-###############################
-add_fillers -base_cells $FILLER_CELLS
-
-###############################
 # Extract detailed parasitics
 ###############################
-reset_parasitics
+set_db delaycal_enable_si true
+set_db extract_rc_engine post_route
 set_db extract_rc_effort_level high
 extract_rc
 
@@ -51,7 +45,6 @@ extract_rc
 ###############################
 report_timing -late  -max_paths 100 > [file join $REPORT_PATH setup.rpt]
 report_timing -early -max_paths 100 > [file join $REPORT_PATH hold.rpt]
-report_timing_summary > [file join $REPORT_PATH timing_summary.rpt]
 report_area  > [file join $REPORT_PATH area.rpt]
 report_power > [file join $REPORT_PATH power.rpt]
 

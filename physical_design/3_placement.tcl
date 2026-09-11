@@ -9,7 +9,7 @@
 set STAGE  3_placement
 set DESIGN counter
 
-set PROJECT_PATH /home/icd1/workspace/counter_design_45nm/
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
 
 set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_floorplan_power
 set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
@@ -41,7 +41,6 @@ place_opt_design
 # Report and save design
 ###############################
 report_timing -late -max_paths 50 > [file join $REPORT_PATH setup.rpt]
-time_design -report_only > [file join $REPORT_PATH timing_summary.rpt]
 write_db $OUTPUT_DB
 
 puts "Done $STAGE"

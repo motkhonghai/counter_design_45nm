@@ -4,9 +4,20 @@ RTL2GDS Course version 7.0
 Staged MMMC physical-design flow using the Stylus Common UI
 ============================================================
 
-Start one Innovus Stylus session from this directory:
+Start one Innovus Stylus session from the physical-design directory:
 
+    cd /home/icd1/workspace/counter_design_45nm/physical_design
     innovus -stylus
+
+Do not start with plain "innovus". That opens the Legacy UI in Innovus 25.13;
+Stylus commands such as add_fillers are then reported as invalid commands.
+
+To run the complete flow from stage 1 through stage 7 in one session:
+
+    innovus -stylus -files run_full.tcl
+
+If stage 2 creates pins_mmmc.io, edit the generated file and type "resume" in
+Innovus. run_full.tcl will then continue with the remaining stages.
 
 Then source one stage at a time. Check each stage before continuing:
 
@@ -38,8 +49,8 @@ Stage mapping:
     2 - Floorplanning, I/O assignment and power planning
     3 - Placement and pre-CTS optimization
     4 - CTS/CCOpt and post-CTS timing analysis
-    5 - Routing and post-route optimization
-    6 - Filler insertion, RC extraction and physical checks
+    5 - Filler insertion, routing and post-route optimization
+    6 - RC extraction and physical checks
     7 - Final DB/netlist/DEF/SDC/GDSII export
 
 PVS metal fill and foundry LVS are intentionally not run because their rule

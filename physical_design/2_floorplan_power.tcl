@@ -9,7 +9,7 @@
 set STAGE  2_floorplan_power
 set DESIGN counter
 
-set PROJECT_PATH /home/icd1/workspace/counter_design_45nm/
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
 
 set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_init
 set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
@@ -41,8 +41,6 @@ if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
 ###############################
 floorplan_design -reshape -predict
 
-check_floorplan -detailed > [file join $REPORT_PATH floorplan_before_io.rpt]
-
 ###############################
 # Create or read I/O constraint
 ###############################
@@ -56,10 +54,16 @@ if {![file exists $IO_FILE]} {
 read_io_file $IO_FILE
 
 ###############################
+# Finish floorplan
+###############################
+set_db finish_floorplan_active_objs [list macro soft_blockage core]
+finish_floorplan -fill_place_blockage soft 20.0
+
+###############################
 # Connect global power nets
 ###############################
-connect_global_net $POWER_NET  -type pg_pin -pin_base_name $POWER_NET  -inst_base_name *
-connect_global_net $GROUND_NET -type pg_pin -pin_base_name $GROUND_NET -inst_base_name *
+connect_global_net $POWER_NET  -type pg_pin -pin $POWER_NET  -inst_base_name *
+connect_global_net $GROUND_NET -type pg_pin -pin $GROUND_NET -inst_base_name *
 connect_global_net $POWER_NET  -type tie_hi
 connect_global_net $GROUND_NET -type tie_lo
 
@@ -113,10 +117,9 @@ route_special \
     -allow_layer_change true
 
 ###############################
-# Check, report and save design
+# Report and save design
 ###############################
-check_floorplan -detailed > [file join $REPORT_PATH floorplan_after_power.rpt]
-time_design -report_only > [file join $REPORT_PATH timing.rpt]
+report_timing -late -max_paths 20 > [file join $REPORT_PATH timing.rpt]
 write_db $OUTPUT_DB
 
 puts "Done $STAGE"
