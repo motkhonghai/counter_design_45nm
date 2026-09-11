@@ -17,7 +17,7 @@ set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/1_init_design
 set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_init
 
 set PROCESS_NODE 45
-set TOP_ROUTING_LAYER 11
+set TOP_ROUTING_LAYER Metal11
 set CTS_BUFFER_CELLS [list CLKBUFX8 CLKBUFX16 CLKBUFX20]
 set CTS_INVERTER_CELLS [list CLKINVX8 CLKINVX16 CLKINVX20]
 set FILLER_CELLS [list FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1]
@@ -48,7 +48,7 @@ set PD_DATABASE_LOADED true
 set_db design_process_node $PROCESS_NODE
 set_db timing_analysis_cppr both
 set_db timing_analysis_type ocv
-set_db route_top_routing_layer $TOP_ROUTING_LAYER
+set_db design_top_routing_layer $TOP_ROUTING_LAYER
 set_db cts_buffer_cells $CTS_BUFFER_CELLS
 set_db cts_inverter_cells $CTS_INVERTER_CELLS
 set_db add_fillers_cells $FILLER_CELLS
