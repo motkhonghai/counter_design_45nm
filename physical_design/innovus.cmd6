@@ -1,0 +1,35 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri Sep 11 10:34:19 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v25.13-s088_1 (64bit) 03/26/2026 12:37 (Linux 4.18.0-305.el8.x86_64)
+#@(#)CDS: NanoRoute 25.13-s088_1 NR260309-1855/25_13-UB (database version 18.20.683) {superthreading v2.20}
+#@(#)CDS: AAE 25.13-s023 (64bit) 03/26/2026 (Linux 4.18.0-305.el8.x86_64)
+#@(#)CDS: CTE 25.13-s044_1 () Mar 24 2026 17:45:14 ( )
+#@(#)CDS: SYNTECH 25.13-s012_1 () Mar 10 2026 03:01:02 ( )
+#@(#)CDS: CPE v25.13-s019
+#@(#)CDS: IQuantus/TQuantus 24.1.0-s476 (64bit) Wed Feb 11 22:11:27 PST 2026 (Linux 4.18.0-305.el8.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+win
+win off
+read_db -common /home/icd1/workspace/counter_design_45nm//synthesis/outputs/mmmc/INVS
+write_db /home/icd1/workspace/counter_design_45nm//physical_design/outputs/mmmc/counter_init
+floorplan_design -reshape -predict
+place_opt_design
+report_timing -late -max_paths 50 > [file join $REPORT_PATH setup.rpt]
+gui_show_edge_number
+getAnalysisMode -socv -quiet
+setNanoRouteMode -route_with_timing_driven true
+getAnalysisMode -socv -quiet
+setNanoRouteMode -route_with_si_driven true
+getAnalysisMode -socv -quiet
+setDesignMode -bottomRoutingLayer Metal1
+getAnalysisMode -socv -quiet
+setDesignMode -topRoutingLayer Metal11
+route_opt_design
+gui_show_edge_number
