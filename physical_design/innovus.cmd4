@@ -63,3 +63,10 @@ file mkdir $REPORT_PATH
 if {![file exists $INPUT_DB]} {...}
 read_db $INPUT_DB
 #@ End verbose source 2_floorplan_power.tcl
+gui_show
+gui_select -point {16.89050 7.30650}
+set_layer_preference node_track -is_visible 1
+set_layer_preference node_track -is_visible 0
+set_layer_preference node_track -is_visible 1
+set_layer_preference node_track -is_visible 0
+exit

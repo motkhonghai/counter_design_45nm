@@ -464,4 +464,16 @@ ERROR     IMPIMEX-7031         1  %s more than once in the same Innovus se...
 
 **ERROR: (IMPIMEX-7031):	#CUI#restoreDesign#read_db# more than once in the same Innovus session is dangerous and not recommended. Some internal state of applications or global settings cannot be reset, so it's not reliable enough in real flow. If you are just experimenting and/or debugging and accept the risks, you can set the root attribute read_db_stop_at_design_in_memory to false and try again.
 
-@innovus 4> 
+@innovus 4> gui_show
+
+@innovus 5> gui_select -point {16.89050 7.30650}
+@innovus 6> set_layer_preference node_track -is_visible 1
+@innovus 7> set_layer_preference node_track -is_visible 0
+@innovus 8> set_layer_preference node_track -is_visible 1
+@innovus 9> set_layer_preference node_track -is_visible 0
+@innovus 10> exit
+*** Message Summary: 5 warning(s), 3 error(s)
+
+
+*** Memory Usage v#1 (Current mem = 3049.094M, initial mem = 996.973M) ***
+--- Ending "Innovus" (totcpu=0:01:54, real=0:10:18, mem=3049.1M) ---
