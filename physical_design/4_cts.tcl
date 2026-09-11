@@ -36,6 +36,7 @@ if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
 # Create and optimize clock tree
 ###############################
 clock_opt_design
+set_interactive_constraint_modes [all_constraint_modes -active]
 set_propagated_clock [all_clocks]
 
 ###############################
