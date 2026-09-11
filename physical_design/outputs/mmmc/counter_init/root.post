@@ -1,8 +1,13 @@
+::db::check_and_set_root_attr add_fillers_cells {FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1}
+::db::check_and_set_root_attr add_tieoffs_cells {{TIELO TIEHI}}
 ::db::check_and_set_root_attr design_bottom_routing_layer Metal2
 ::db::check_and_set_root_attr extract_qrc_n2p_accuracy_enhancement true
+::db::check_and_set_root_attr extract_rc_coupling_cap_threshold 0.1
 ::db::check_and_set_root_attr extract_rc_pre_place_site_size 1.91
 ::db::check_and_set_root_attr extract_rc_pre_place_wire_length_slope 1.9
 ::db::check_and_set_root_attr extract_rc_pre_place_wire_length_y0 2.0
+::db::check_and_set_root_attr extract_rc_relative_cap_threshold 1.0
+::db::check_and_set_root_attr extract_rc_total_cap_threshold 0.0
 ::db::check_and_set_root_attr floorplan_bottom_row_site_index -1
 ::db::check_and_set_root_attr floorplan_default_tech_site CoreSite
 ::db::check_and_set_root_attr floorplan_first_row_site_index 0

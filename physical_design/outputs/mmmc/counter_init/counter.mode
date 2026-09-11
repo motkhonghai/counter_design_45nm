@@ -1,8 +1,10 @@
 catch { setDesignMode -bottomRoutingLayer Metal2 }
-catch { setAnalysisMode -analysisType single }
+catch { setDesignMode -process 45 }
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -cppr both }
 catch { setOptMode -opt_multi_bit_flop_name_prefix CDN_MBIT_ }
 catch { setOptMode -opt_multi_bit_flop_name_separator _MB_ }
-catch { setExtractRCMode  -engine preRoute }
+catch { setExtractRCMode  -engine preRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.1 }
 catch {setNanoRouteMode -quiet -extract_qrc_n2p_accuracy_enhancement true}
 catch {setNanoRouteMode -quiet -route_extract_third_party_compatible false}
 catch {setNanoRouteMode -quiet -route_exp_design_mode_bottom_routing_layer 2}
@@ -11,6 +13,8 @@ catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc 
 catch { setDelayCalMode -engine aae }
 catch { setImportMode -discardFloatingVNets false }
 catch { setImportMode -keepEmptyModule true }
+catch { setTieHiLoMode -cell {{TIELO TIEHI}} }
+catch { setFillerMode -core {FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1} }
 catch { setFPlanMode -bottomRowSiteIndex -1 }
 catch { setFPlanMode -cellsForExtraSites {} }
 catch { setFPlanMode -defaultRowPatternSite {} }
