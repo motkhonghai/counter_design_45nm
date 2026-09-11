@@ -10,7 +10,7 @@
 ::db::check_and_set_root_attr delaycal_eng_enablepreplacedflow false
 ::db::check_and_set_root_attr delaycal_ignore_net_load false
 ::db::check_and_set_root_attr design_bottom_routing_layer Metal2
-::db::check_and_set_root_attr extract_design_signature 110267362
+::db::check_and_set_root_attr extract_design_signature 124200852
 ::db::check_and_set_root_attr extract_qrc_n2p_accuracy_enhancement true
 ::db::check_and_set_root_attr extract_rc_coupled true
 ::db::check_and_set_root_attr extract_rc_coupling_cap_threshold 0.1
@@ -24,7 +24,6 @@
 ::db::check_and_set_root_attr extract_rc_total_cap_threshold 0.0
 ::db::check_and_set_root_attr finish_floorplan_active_objs {macro soft_blockage core}
 ::db::check_and_set_root_attr floorplan_bottom_row_site_index -1
-::db::check_and_set_root_attr floorplan_check_types {fence computed_row_pattern_site}
 ::db::check_and_set_root_attr floorplan_default_tech_site CoreSite
 ::db::check_and_set_root_attr floorplan_first_row_site_index 0
 ::db::check_and_set_root_attr floorplan_last_row_site_index -1
@@ -49,11 +48,6 @@
 ::db::check_and_set_root_attr opt_view_pruning_setup_views_active_list { view_wcl_slow view_wcl_fast }
 ::db::check_and_set_root_attr opt_view_pruning_setup_views_persistent_list { view_wcl_slow}
 ::db::check_and_set_root_attr opt_view_pruning_tdgr_setup_views_persistent_list { view_wcl_slow}
-::db::check_and_set_root_attr place_design_refine_place true
-::db::check_and_set_root_attr place_detail_exp_adv_pin_access false
-::db::check_and_set_root_attr place_global_cong_repair auto
-::db::check_and_set_root_attr place_global_exp_inverter_rewiring true
-::db::check_and_set_root_attr place_global_place_io_pins false
 ::db::check_and_set_root_attr route_detail_antenna_factor 1.0
 ::db::check_and_set_root_attr route_detail_post_route_spread_wire auto
 ::db::check_and_set_root_attr route_detail_use_lef_pin_taper_rule true

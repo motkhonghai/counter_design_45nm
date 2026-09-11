@@ -1,11 +1,11 @@
 VERIFY_CONNECTIVITY use new engine.
 
 ******** Start: VERIFY CONNECTIVITY ********
-Start Time: Fri Sep 11 15:43:18 2026
+Start Time: Fri Sep 11 15:59:02 2026
 
 Design Name: counter
 Database Units: 2000
-Design Boundary: (0.0000, 0.0000) (12.1750, 8.5500)
+Design Boundary: (0.0000, 0.0000) (22.2000, 18.4300)
 Error Limit = 1000; Warning Limit = 50
 Check all nets
 
@@ -13,7 +13,7 @@ Begin Summary
   Found no problems or warnings.
 End Summary
 
-End Time: Fri Sep 11 15:43:18 2026
+End Time: Fri Sep 11 15:59:02 2026
 Time Elapsed: 0:00:00.0
 
 ******** End: VERIFY CONNECTIVITY ********

@@ -1,11 +1,9 @@
-::db::check_and_set_root_attr extract_rc_engine pre_route
 ::db::check_and_set_root_attr add_fillers_cells {FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1}
 ::db::check_and_set_root_attr add_rings_avoid_short true
 ::db::check_and_set_root_attr add_rings_extend_over_row false
 ::db::check_and_set_root_attr add_rings_ignore_rows false
 ::db::check_and_set_root_attr add_rings_skip_shared_inner_ring none
 ::db::check_and_set_root_attr add_tieoffs_cells {{TIELO TIEHI}}
-::db::check_and_set_root_attr delaycal_ignore_net_load false
 ::db::check_and_set_root_attr design_bottom_routing_layer Metal2
 ::db::check_and_set_root_attr extract_qrc_n2p_accuracy_enhancement true
 ::db::check_and_set_root_attr extract_rc_coupling_cap_threshold 0.1
@@ -16,7 +14,6 @@
 ::db::check_and_set_root_attr extract_rc_total_cap_threshold 0.0
 ::db::check_and_set_root_attr finish_floorplan_active_objs {macro soft_blockage core}
 ::db::check_and_set_root_attr floorplan_bottom_row_site_index -1
-::db::check_and_set_root_attr floorplan_check_types {fence computed_row_pattern_site}
 ::db::check_and_set_root_attr floorplan_default_tech_site CoreSite
 ::db::check_and_set_root_attr floorplan_first_row_site_index 0
 ::db::check_and_set_root_attr floorplan_last_row_site_index -1
@@ -26,12 +23,6 @@
 ::db::check_and_set_root_attr ilm_keep_high_fanout_critical_insts false
 ::db::check_and_set_root_attr opt_multi_bit_flop_name_prefix CDN_MBIT_
 ::db::check_and_set_root_attr opt_multi_bit_flop_name_separator _MB_
-::db::check_and_set_root_attr opt_view_pruning_placement_setup_view_list { view_wcl_slow  }
-::db::check_and_set_root_attr place_design_refine_place true
-::db::check_and_set_root_attr place_detail_exp_adv_pin_access false
-::db::check_and_set_root_attr place_global_cong_repair auto
-::db::check_and_set_root_attr place_global_exp_inverter_rewiring true
-::db::check_and_set_root_attr place_global_place_io_pins false
 ::db::check_and_set_root_attr route_exp_design_mode_bottom_routing_layer 2
 ::db::check_and_set_root_attr route_extract_third_party_compatible false
 ::db::check_and_set_root_attr route_re_insert_filler_cell_list {FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1}
