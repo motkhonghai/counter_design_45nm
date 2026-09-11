@@ -19,8 +19,6 @@ set IO_FILE     ${PROJECT_PATH}/physical_design/pins_mmmc.io
 
 set POWER_NET       VDD
 set GROUND_NET      VSS
-set CORE_SITE       CoreSite
-set CORE_UTILIZATION 0.70
 
 file mkdir $OUTPUT_PATH
 file mkdir $REPORT_PATH
@@ -39,12 +37,9 @@ if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
 }
 
 ###############################
-# Create floorplan
+# Create floorplan automatically
 ###############################
-create_floorplan \
-    -core_margins_by die \
-    -site $CORE_SITE \
-    -core_density_size 1 $CORE_UTILIZATION 2.5 2.5 2.5 2.5
+floorplan_design -reshape -predict
 
 check_floorplan -detailed > [file join $REPORT_PATH floorplan_before_io.rpt]
 
