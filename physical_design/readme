@@ -1,10 +1,39 @@
 Innovus version 25.1
 RTL2GDS Course version 7.0
 
-MMMC physical-design flow: run_mmmc.tcl
-Launch with Stylus Common UI:
+Staged MMMC physical-design flow using the Stylus Common UI
+============================================================
 
-    innovus -stylus -files run_mmmc.tcl
+Run one stage at a time, in order, from this directory:
 
-On the first run, the flow creates pins_mmmc.io and suspends. Edit the I/O
-template, save it, then enter "resume" at the Innovus prompt.
+    innovus -stylus -files 1_init_design.tcl
+    innovus -stylus -files 2_floorplan_power.tcl
+    innovus -stylus -files 3_placement.tcl
+    innovus -stylus -files 4_cts.tcl
+    innovus -stylus -files 5_routing.tcl
+    innovus -stylus -files 6_chip_finish.tcl
+    innovus -stylus -files 7_export.tcl
+
+Close Innovus after each completed stage, then start a fresh session for the
+next stage. Every Tcl file declares its own global variables at the top, runs
+its commands in order, and reads the checkpoint created by the previous stage.
+No shared setup file is required.
+
+On the first stage-2 run, Innovus creates pins_mmmc.io and pauses. Edit the
+side/layer/spacing assignments, save the file, then type "resume" to finish
+stage 2. Later stage-2 runs reuse that file.
+
+Checkpoints are stored in outputs/mmmc. Reports are separated by stage under
+reports/mmmc/<stage_name>.
+
+Stage mapping:
+    1 - Design initialization and MMMC handoff
+    2 - Floorplanning, I/O assignment and power planning
+    3 - Placement and pre-CTS optimization
+    4 - CTS/CCOpt and post-CTS timing analysis
+    5 - Routing and post-route optimization
+    6 - Filler insertion, RC extraction and physical checks
+    7 - Final DB/netlist/DEF/SDC/GDSII export
+
+PVS metal fill and foundry LVS are intentionally not run because their rule
+decks are not included in this project.
