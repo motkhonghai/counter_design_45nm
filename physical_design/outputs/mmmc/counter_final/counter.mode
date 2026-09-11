@@ -4,6 +4,7 @@ set ::IMEX::libVar ${::IMEX::dataVar}/libs
 
 catch { setDesignMode -bottomRoutingLayer Metal2 }
 catch { setDesignMode -process 45 }
+catch { setDesignMode -topRoutingLayer Metal11 }
 catch { setAnalysisMode -analysisType onChipVariation }
 catch { setAnalysisMode -checkType setup }
 catch { setAnalysisMode -clkSrcPath true }
@@ -42,12 +43,12 @@ catch {setNanoRouteMode -quiet -route_extract_third_party_compatible false}
 catch {setNanoRouteMode -quiet -route_global_exp_timing_driven_std_delay 41.700000}
 catch {setNanoRouteMode -quiet -route_global_exp_timing_driven_use_tif_timing_engine_for_import_design false}
 catch {setNanoRouteMode -quiet -route_exp_design_mode_bottom_routing_layer 2}
+catch {setNanoRouteMode -quiet -route_exp_design_mode_top_routing_layer 11}
 catch {setNanoRouteMode -quiet -route_re_insert_filler_cell_list "FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1"}
 catch {setNanoRouteMode -quiet -route_re_insert_filler_cell_list_from_file false}
 catch {setNanoRouteMode -quiet -route_strict_honor_route_rule "false"}
-catch {setNanoRouteMode -quiet -route_top_routing_layer 11}
 catch {setNanoRouteMode -quiet -route_with_si_post_route_fix false}
-catch {setNanoRouteMode -quiet -timingEngine ".timing_file_122799_ce4bc3ba-9f82-460d-81b6-0d2bb339d0ae.tif.gz"}
+catch {setNanoRouteMode -quiet -timingEngine ".timing_file_139686_0b11a068-401e-4344-ac0d-6f126d19f471.tif.gz"}
 
 catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
 catch { setUsefulSkewMode -opt_skew_eco_route false }

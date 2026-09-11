@@ -5,6 +5,7 @@
 ::db::check_and_set_root_attr add_rings_skip_shared_inner_ring none
 ::db::check_and_set_root_attr add_tieoffs_cells {{TIELO TIEHI}}
 ::db::check_and_set_root_attr design_bottom_routing_layer Metal2
+::db::check_and_set_root_attr design_top_routing_layer Metal11
 ::db::check_and_set_root_attr extract_qrc_n2p_accuracy_enhancement true
 ::db::check_and_set_root_attr extract_rc_coupling_cap_threshold 0.1
 ::db::check_and_set_root_attr extract_rc_pre_place_site_size 1.91
@@ -24,8 +25,8 @@
 ::db::check_and_set_root_attr opt_multi_bit_flop_name_prefix CDN_MBIT_
 ::db::check_and_set_root_attr opt_multi_bit_flop_name_separator _MB_
 ::db::check_and_set_root_attr route_exp_design_mode_bottom_routing_layer 2
+::db::check_and_set_root_attr route_exp_design_mode_top_routing_layer 11
 ::db::check_and_set_root_attr route_extract_third_party_compatible false
 ::db::check_and_set_root_attr route_re_insert_filler_cell_list {FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1}
 ::db::check_and_set_root_attr route_re_insert_filler_cell_list_from_file false
-::db::check_and_set_root_attr route_top_routing_layer 11
 ::db::check_and_set_root_attr write_def_stream_check_uncolored false

@@ -10,6 +10,7 @@
 ::db::check_and_set_root_attr delaycal_eng_enablepreplacedflow false
 ::db::check_and_set_root_attr delaycal_ignore_net_load false
 ::db::check_and_set_root_attr design_bottom_routing_layer Metal2
+::db::check_and_set_root_attr design_top_routing_layer Metal11
 ::db::check_and_set_root_attr extract_design_signature 124200852
 ::db::check_and_set_root_attr extract_qrc_n2p_accuracy_enhancement true
 ::db::check_and_set_root_attr extract_rc_coupled true
@@ -54,11 +55,11 @@
 ::db::check_and_set_root_attr route_early_global_exp_do_not_invalidate_rc_grid false
 ::db::check_and_set_root_attr route_early_global_secondary_pg false
 ::db::check_and_set_root_attr route_exp_design_mode_bottom_routing_layer 2
+::db::check_and_set_root_attr route_exp_design_mode_top_routing_layer 11
 ::db::check_and_set_root_attr route_extract_third_party_compatible false
 ::db::check_and_set_root_attr route_global_exp_timing_driven_std_delay 41.7
 ::db::check_and_set_root_attr route_global_exp_timing_driven_use_tif_timing_engine_for_import_design false
 ::db::check_and_set_root_attr route_re_insert_filler_cell_list {FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1}
 ::db::check_and_set_root_attr route_re_insert_filler_cell_list_from_file false
-::db::check_and_set_root_attr route_top_routing_layer 11
 ::db::check_and_set_root_attr route_with_si_post_route_fix false
 ::db::check_and_set_root_attr write_def_stream_check_uncolored false

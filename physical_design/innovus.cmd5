@@ -1,0 +1,258 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri Sep 11 16:58:28 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v25.13-s088_1 (64bit) 03/26/2026 12:37 (Linux 4.18.0-305.el8.x86_64)
+#@(#)CDS: NanoRoute 25.13-s088_1 NR260309-1855/25_13-UB (database version 18.20.683) {superthreading v2.20}
+#@(#)CDS: AAE 25.13-s023 (64bit) 03/26/2026 (Linux 4.18.0-305.el8.x86_64)
+#@(#)CDS: CTE 25.13-s044_1 () Mar 24 2026 17:45:14 ( )
+#@(#)CDS: SYNTECH 25.13-s012_1 () Mar 10 2026 03:01:02 ( )
+#@(#)CDS: CPE v25.13-s019
+#@(#)CDS: IQuantus/TQuantus 24.1.0-s476 (64bit) Wed Feb 11 22:11:27 PST 2026 (Linux 4.18.0-305.el8.x86_64)
+
+#@ source run_full.tcl 
+#@ Begin verbose source (pre): source run_full.tcl 
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
+set SCRIPT_PATH  ${PROJECT_PATH}/physical_design
+#@ source ${SCRIPT_PATH}/1_init_design.tcl
+#@ Begin verbose source /home/icd1/workspace/counter_design_45nm/physical_design/1_init_design.tcl (pre)
+set STAGE  1_init_design
+set DESIGN counter
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
+set INPUT_DB    ${PROJECT_PATH}/synthesis/outputs/mmmc/INVS
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/1_init_design
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_init
+set PROCESS_NODE 45
+set TOP_ROUTING_LAYER Metal11
+set CTS_BUFFER_CELLS [list CLKBUFX8 CLKBUFX16 CLKBUFX20]
+set CTS_INVERTER_CELLS [list CLKINVX8 CLKINVX16 CLKINVX20]
+set FILLER_CELLS [list FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1]
+set TIE_CELLS [list TIELO TIEHI]
+file mkdir $OUTPUT_PATH
+file mkdir $REPORT_PATH
+set_db init_power_nets  VDD
+set_db init_ground_nets VSS
+if {![file exists $INPUT_DB]} {...}
+read_db -common $INPUT_DB
+set PD_DATABASE_LOADED true
+set_db design_process_node $PROCESS_NODE
+set_db timing_analysis_cppr both
+set_db timing_analysis_type ocv
+set_db design_top_routing_layer $TOP_ROUTING_LAYER
+set_db cts_buffer_cells $CTS_BUFFER_CELLS
+set_db cts_inverter_cells $CTS_INVERTER_CELLS
+set_db add_fillers_cells $FILLER_CELLS
+set_db add_tieoffs_cells $TIE_CELLS
+puts "MMMC analysis views: [get_db analysis_views]"
+write_db $OUTPUT_DB
+puts "Done $STAGE"
+puts "Saved database: $OUTPUT_DB"
+#@ End verbose source /home/icd1/workspace/counter_design_45nm/physical_design/1_init_design.tcl
+#@ source ${SCRIPT_PATH}/2_floorplan_power.tcl
+#@ Begin verbose source /home/icd1/workspace/counter_design_45nm/physical_design/2_floorplan_power.tcl (pre)
+set STAGE  2_floorplan_power
+set DESIGN counter
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_init
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/2_floorplan_power
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_floorplan_power
+set IO_FILE     ${PROJECT_PATH}/physical_design/pins_mmmc.io
+set POWER_NET       VDD
+set GROUND_NET      VSS
+set CORE_SITE       CoreSite
+set CORE_WIDTH      12.2
+set CORE_HEIGHT     8.55
+set CORE_MARGIN     5.0
+file mkdir $OUTPUT_PATH
+file mkdir $REPORT_PATH
+if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
+puts "Use design already loaded in memory"
+}
+create_floorplan -site $CORE_SITE -core_size \
+    $CORE_WIDTH $CORE_HEIGHT \
+    $CORE_MARGIN $CORE_MARGIN $CORE_MARGIN $CORE_MARGIN
+if {![file exists $IO_FILE]} {...}
+read_io_file $IO_FILE
+set_db finish_floorplan_active_objs [list macro soft_blockage core]
+finish_floorplan -fill_place_blockage soft 20.0
+connect_global_net $POWER_NET  -type pg_pin -pin $POWER_NET  -inst_base_name *
+connect_global_net $GROUND_NET -type pg_pin -pin $GROUND_NET -inst_base_name *
+connect_global_net $POWER_NET  -type tie_hi
+connect_global_net $GROUND_NET -type tie_lo
+set_db add_rings_skip_shared_inner_ring none
+set_db add_rings_avoid_short true
+set_db add_rings_ignore_rows false
+set_db add_rings_extend_over_row false
+add_rings \
+    -type core_rings \
+    -nets [list $POWER_NET $GROUND_NET] \
+    -follow core \
+    -layer [list bottom Metal11 top Metal11 right Metal10 left Metal10] \
+    -width 0.7 \
+    -spacing 0.4 \
+    -offset 0.6 \
+    -jog_distance 0.6 \
+    -threshold 0.6
+add_stripes \
+    -nets [list $POWER_NET $GROUND_NET] \
+    -layer Metal10 \
+    -width 0.3 \
+    -spacing 0.4 \
+    -set_to_set_distance 5.0 \
+    -merge_stripes_value 0.6 \
+    -max_same_layer_jog_length 0.44 \
+    -pad_core_ring_bottom_layer_limit Metal9 \
+    -pad_core_ring_top_layer_limit Metal11 \
+    -block_ring_bottom_layer_limit Metal9 \
+    -block_ring_top_layer_limit Metal11
+route_special \
+    -connect core_pin \
+    -nets [list $POWER_NET $GROUND_NET] \
+    -layer_change_range [list Metal1(1) Metal11(11)] \
+    -crossover_via_layer_range [list Metal1(1) Metal11(11)] \
+    -target_via_layer_range [list Metal1(1) Metal11(11)] \
+    -core_pin_target first_after_row_end \
+    -allow_jogging true \
+    -allow_layer_change true
+report_timing -late -max_paths 20 > [file join $REPORT_PATH timing.rpt]
+write_db $OUTPUT_DB
+puts "Done $STAGE"
+puts "Saved database: $OUTPUT_DB"
+#@ End verbose source /home/icd1/workspace/counter_design_45nm/physical_design/2_floorplan_power.tcl
+#@ source ${SCRIPT_PATH}/3_placement.tcl
+#@ Begin verbose source /home/icd1/workspace/counter_design_45nm/physical_design/3_placement.tcl (pre)
+set STAGE  3_placement
+set DESIGN counter
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_floorplan_power
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/3_placement
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_place
+file mkdir $OUTPUT_PATH
+file mkdir $REPORT_PATH
+if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
+puts "Use design already loaded in memory"
+}
+place_opt_design
+report_timing -late -max_paths 50 > [file join $REPORT_PATH setup.rpt]
+write_db $OUTPUT_DB
+puts "Done $STAGE"
+puts "Saved database: $OUTPUT_DB"
+#@ End verbose source /home/icd1/workspace/counter_design_45nm/physical_design/3_placement.tcl
+#@ source ${SCRIPT_PATH}/4_cts.tcl
+#@ Begin verbose source /home/icd1/workspace/counter_design_45nm/physical_design/4_cts.tcl (pre)
+set STAGE  4_cts
+set DESIGN counter
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_place
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/4_cts
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_cts
+file mkdir $OUTPUT_PATH
+file mkdir $REPORT_PATH
+if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
+puts "Use design already loaded in memory"
+}
+clock_opt_design
+set_interactive_constraint_modes [all_constraint_modes -active]
+set_propagated_clock [all_clocks]
+report_timing -late  -max_paths 50 > [file join $REPORT_PATH setup.rpt]
+report_timing -early -max_paths 50 > [file join $REPORT_PATH hold.rpt]
+write_db $OUTPUT_DB
+puts "Done $STAGE"
+puts "Saved database: $OUTPUT_DB"
+#@ End verbose source /home/icd1/workspace/counter_design_45nm/physical_design/4_cts.tcl
+#@ source ${SCRIPT_PATH}/5_routing.tcl
+#@ Begin verbose source /home/icd1/workspace/counter_design_45nm/physical_design/5_routing.tcl (pre)
+set STAGE  5_routing
+set DESIGN counter
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_cts
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/5_routing
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_route
+set FILLER_CELLS [list FILL64 FILL32 FILL16 FILL8 FILL4 FILL2 FILL1]
+file mkdir $OUTPUT_PATH
+file mkdir $REPORT_PATH
+if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
+puts "Use design already loaded in memory"
+}
+set_db add_fillers_cells $FILLER_CELLS
+add_fillers
+route_opt_design
+report_timing -late  -max_paths 50 > [file join $REPORT_PATH setup.rpt]
+report_timing -early -max_paths 50 > [file join $REPORT_PATH hold.rpt]
+write_db $OUTPUT_DB
+puts "Done $STAGE"
+puts "Saved database: $OUTPUT_DB"
+#@ End verbose source /home/icd1/workspace/counter_design_45nm/physical_design/5_routing.tcl
+#@ source ${SCRIPT_PATH}/6_chip_finish.tcl
+#@ Begin verbose source /home/icd1/workspace/counter_design_45nm/physical_design/6_chip_finish.tcl (pre)
+set STAGE  6_chip_finish
+set DESIGN counter
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_route
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/6_chip_finish
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_finish
+file mkdir $OUTPUT_PATH
+file mkdir $REPORT_PATH
+if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
+puts "Use design already loaded in memory"
+}
+set_db delaycal_enable_si true
+set_db extract_rc_engine post_route
+set_db extract_rc_effort_level high
+extract_rc
+report_timing -late  -max_paths 100 > [file join $REPORT_PATH setup.rpt]
+report_timing -early -max_paths 100 > [file join $REPORT_PATH hold.rpt]
+report_area  > [file join $REPORT_PATH area.rpt]
+report_power > [file join $REPORT_PATH power.rpt]
+check_drc > [file join $REPORT_PATH drc.rpt]
+check_connectivity > [file join $REPORT_PATH connectivity.rpt]
+write_db $OUTPUT_DB
+puts "Done $STAGE"
+puts "Saved database: $OUTPUT_DB"
+#@ End verbose source /home/icd1/workspace/counter_design_45nm/physical_design/6_chip_finish.tcl
+#@ source ${SCRIPT_PATH}/7_export.tcl
+#@ Begin verbose source /home/icd1/workspace/counter_design_45nm/physical_design/7_export.tcl (pre)
+set STAGE  7_export
+set DESIGN counter
+set PROJECT_PATH /home/icd1/workspace/counter_design_45nm
+set INPUT_DB    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_finish
+set OUTPUT_PATH ${PROJECT_PATH}/physical_design/outputs/mmmc
+set REPORT_PATH ${PROJECT_PATH}/physical_design/reports/mmmc/7_export
+set OUTPUT_DB   ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_final
+set NETLIST     ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_pnr.v
+set DEF_FILE    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_pnr.def
+set SLOW_SDC    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_pnr_view_wcl_slow.sdc
+set FAST_SDC    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_post_pnr_view_wcl_fast.sdc
+set STREAM_MAP  ${PROJECT_PATH}/physical_design/streamOut.map
+set GDS_FILE    ${PROJECT_PATH}/physical_design/outputs/mmmc/counter_final.gds
+file mkdir $OUTPUT_PATH
+file mkdir $REPORT_PATH
+if {![file exists $STREAM_MAP]} {...}
+if {[info exists PD_DATABASE_LOADED] && $PD_DATABASE_LOADED} {
+puts "Use design already loaded in memory"
+}
+write_db $OUTPUT_DB
+write_netlist $NETLIST
+write_def $DEF_FILE
+write_sdc -view view_wcl_slow > $SLOW_SDC
+write_sdc -view view_wcl_fast > $FAST_SDC
+write_stream -map_file $STREAM_MAP $GDS_FILE
+puts "Final runtime and memory:"
+time_info FINAL
+puts "Done $STAGE"
+puts "Saved database: $OUTPUT_DB"
+puts "Netlist: $NETLIST"
+puts "DEF: $DEF_FILE"
+puts "GDSII: $GDS_FILE"
+#@ End verbose source /home/icd1/workspace/counter_design_45nm/physical_design/7_export.tcl
+puts "Full physical-design flow completed"
+#@ End verbose source: run_full.tcl
