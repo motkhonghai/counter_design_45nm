@@ -1,0 +1,46 @@
+# PDK / thư viện
+lib/
+lef/
+QRC_Tech/
+captable/
+
+# File chạy chương trình và log
+*.tcl
+*.log
+*.log*
+*.cmd*
+*.db
+*.cdb
+*.gds
+*.def
+*.spef
+*.sh
+*.tstamp
+.rs_icd1.tstamp
+
+# Map/config file chạy chương trình
+physical_design/streamOut.map
+
+# Output và thư mục làm việc của tool
+outputs/
+INVS/
+synthesis/fv/
+physical_design/extLogDir/
+physical_design/timingReports/
+physical_design/.predict_fp_*
+physical_design/rc_model.bin
+physical_design/counter.conn.rpt*
+physical_design/counter.geom.rpt*
+
+# Readme phụ (chỉ giữ README ở gốc)
+physical_design/readme
+
+# STA: chỉ giữ .sdc
+STA/*.v
+STA/*.view
+STA/pins.io
+STA/counter.scandef
+
+# Misc
+.metrics
+.stats.dat
