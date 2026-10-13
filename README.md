@@ -65,3 +65,14 @@ reports under `synthesis/reports/mmmc/` and `physical_design/reports/mmmc/`.
   `counter_pre_synthesis_timing`, `final`, `syn_generic_*`, `syn_map_*`, `syn_opt_*`.
 - **Physical Design** — `physical_design/reports/mmmc/<stage>/`:
   `timing`, `setup`, `hold`, `area`, `power`, `drc`, `connectivity`.
+
+## 6. Delivered outputs
+
+- **Synthesis** — `synthesis/outputs/mmmc/`:
+  - Netlist: `counter_netlist.v`
+  - SDC per view: `counter_view_wcl_slow.sdc`, `counter_view_wcl_fast.sdc`
+  - Reports: `final.rpt`, `syn_generic_*`, `syn_map_*`, `syn_opt_*`
+- **Physical Design** — `physical_design/outputs/mmmc/`:
+  - GDSII: `counter_final.gds`
+  - Layout/netlist: `counter_post_pnr.def`, `counter_post_pnr.v`
+  - SDC per view: `counter_post_pnr_view_wcl_slow.sdc`, `counter_post_pnr_view_wcl_fast.sdc`

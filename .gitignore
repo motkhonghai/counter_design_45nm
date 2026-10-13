@@ -11,8 +11,6 @@ captable/
 *.cmd*
 *.db
 *.cdb
-*.gds
-*.def
 *.spef
 *.sh
 *.tstamp
@@ -21,8 +19,7 @@ captable/
 # Map/config file chạy chương trình
 physical_design/streamOut.map
 
-# Output và thư mục làm việc của tool
-outputs/
+# Thư mục làm việc / trung gian của tool
 INVS/
 synthesis/fv/
 physical_design/extLogDir/
@@ -31,6 +28,19 @@ physical_design/.predict_fp_*
 physical_design/rc_model.bin
 physical_design/counter.conn.rpt*
 physical_design/counter.geom.rpt*
+
+# Checkpoint DB của PD (trong outputs chỉ giữ deliverables ở mmmc/)
+physical_design/outputs/mmmc/counter_init/
+physical_design/outputs/mmmc/counter_floorplan_power/
+physical_design/outputs/mmmc/counter_place/
+physical_design/outputs/mmmc/counter_post_cts/
+physical_design/outputs/mmmc/counter_post_route/
+physical_design/outputs/mmmc/counter_finish/
+physical_design/outputs/mmmc/counter_final/
+
+# Checkpoint DB/cdb của Synthesis
+synthesis/outputs/mmmc/syn_opt_counter.cdb/
+synthesis/outputs/mmmc/.*
 
 # Readme phụ (chỉ giữ README ở gốc)
 physical_design/readme
